@@ -4,3 +4,5 @@
 [![License: MIT](https://img.shields.io)](https://opensource.org)
 
 **pyfetch** — это быстрый и настраиваемый инструмент для вывода информации 
+
+"Как neofetch, только на змеином языке" 🐍
