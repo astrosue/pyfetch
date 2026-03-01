@@ -47,6 +47,14 @@ default_logo = [
         ]
 
 ##defs
+def get_os_name():
+    if os.path.exists("/etc/os-release"):
+        with open("/etc/os-release") as f:
+            for line in f:
+                if line.startswith("PRETTY_NAME="):
+                    return line.strip().split("=")[1].replace('"', '').replace("'", "")
+    return("Linux kernel")
+
 
 def get_distro_id():
     if os.path.exists("/etc/os-release"):
@@ -93,7 +101,7 @@ def print_fetch():
 info = [
 f"\033[1;36m{user}\033[0m@\033[1;36m{host}\033[0m",
 "----------------",
-f"\033[1;32mOS:\033[0m CachyOS",
+f"\033[1;32mOS:\033[0m {get_os_name()}",
 f"\033[1;32mWM:\033[0m {get_wm()}",
 f"\033[1;32mDate:\033[0m {date}",
 f"\033[1;32mShell:\033[0m Python",
