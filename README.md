@@ -18,8 +18,8 @@
 ## 🎨 ASCII Art Status
 
 В текущей версии реализована эксклюзивная поддержка логотипа для:
-- [x] **CachyOS** 🐧
-- [x] Arch Linux (WIP)
+- [x] **CachyOS** 
+- [x] **Arch Linux**
 - [ ] Fedora (WIP)
 - [ ] Debian (WIP)
 
