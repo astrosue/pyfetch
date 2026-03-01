@@ -19,7 +19,7 @@
 
 В текущей версии реализована эксклюзивная поддержка логотипа для:
 - [x] **CachyOS** 🐧
-- [ ] Arch Linux (WIP)
+- [x] Arch Linux (WIP)
 - [ ] Fedora (WIP)
 - [ ] Debian (WIP)
 
