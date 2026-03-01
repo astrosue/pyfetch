@@ -30,7 +30,7 @@
 Скопируйте и вставьте эту команду в терминал:
 
 ```bash
-git clone https://github.com && cd pyfetch && pip install -r requirements.txt
+git clone https://github.com/astrosue/pyfetch && cd pyfetch && pip install -r requirements.txt
 python pyfetch.py
 ```
 
