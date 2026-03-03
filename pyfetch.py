@@ -42,6 +42,18 @@ r"  /   ,,   \ ",
 r" /   |  |   \ ",
 r"/_-''    ''-_\ ",
 ]
+fedora_logo = 
+r"        ,'''''. "
+r"       |   ,.  | "
+r"       |  |  '_' "
+r"   ,....|  |.. "
+r" .'  ,_;|   ..' "
+r" |  |   |  | "
+r" |  ',_,'  | "
+r" '.     ,' "
+r"   ''''' "
+
+
 default_logo = [
 "ur distro dont get logo"
         ]
@@ -68,7 +80,8 @@ def get_distro_id():
 def get_logo(distro_id):
     logos = {
     "cachyos": cachy_logo,
-    "arch": arch_logo
+    "arch": arch_logo,
+    "fedora": fedora_logo
             }
     return logos.get(distro_id, default_logo)
 
