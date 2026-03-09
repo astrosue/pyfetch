@@ -21,6 +21,7 @@
 - [x] **CachyOS** 
 - [x] **Arch Linux**
 - [x] **Fedora**
+- [x] **Gentoo**
 - [ ] Debian (WIP)
 
 > [!TIP]
