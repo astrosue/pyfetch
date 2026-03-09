@@ -4,6 +4,7 @@ import getpass
 import psutil, socket
 import time
 import os
+import subprocess
 
 ##mem
 virt_mem = psutil.virtual_memory()
@@ -113,6 +114,23 @@ def get_wm():
             wm = "unknown wm"
     return f"{wm} ({session_type})"
 
+def get_cpu():
+    try:
+        with open("/proc/cpuinfo") as f:
+            for line in f:
+                if "model name" in line:
+                    return line.split(":")[1].strip()
+    except: return "unknown cpu"
+
+def get_gpu():
+    try:
+        gpu_info = subprocess.check_output("lspci | grep -Ei 'vga|3d|display'", shell=True, text=True)
+        gpu_name = gpu_info.split(":")[-1].strip()
+        return gpu_name
+    except:
+        return "unknown gpu"
+
+
 ##logo
 def print_fetch():
     dist_id = get_distro_id()
@@ -131,6 +149,8 @@ f"\033[1;32mOS:\033[0m {get_os_name()}",
 f"\033[1;32mWM:\033[0m {get_wm()}",
 f"\033[1;32mDate:\033[0m {date}",
 f"\033[1;32mShell:\033[0m Python",
+f"\033[1;32mCPU:\033[0m {get_cpu()}",
+f"\033[1;32mGPU:\033[0m {get_gpu()}",
 f"\033[1;32mRAM:\033[0m {ram_used}GB / {ram_total}GB ({ram_percent}%)",
 f"\033[1;32mUptime:\033[0m {up_str}"
 ]
