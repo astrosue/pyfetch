@@ -1,6 +1,9 @@
-import getpass, socket, psutil, time, subprocess, os
 from datetime import datetime
 from itertools import zip_longest
+import getpass
+import psutil, socket
+import time
+import os
 
 ##mem
 virt_mem = psutil.virtual_memory()
@@ -19,7 +22,6 @@ minutes = int((uptime_seconds % 3600) // 60)
 
 ## strings
 up_str = f"{hours}h {minutes}m"
-
 ##logoz
 cachy_logo = [
     "  _____________    ",
@@ -42,16 +44,26 @@ r"  /   ,,   \ ",
 r" /   |  |   \ ",
 r"/_-''    ''-_\ ",
 ]
-fedora_logo = 
-r"        ,'''''. "
-r"       |   ,.  | "
-r"       |  |  '_' "
-r"   ,....|  |.. "
-r" .'  ,_;|   ..' "
-r" |  |   |  | "
-r" |  ',_,'  | "
-r" '.     ,' "
-r"   ''''' "
+fedora_logo = [
+r"        ,'''''. ",
+r"       |   ,.  | ",
+r"       |  |  '_' ",
+r"  ,....|  |.. ",
+r".'  ,_;|   ..' ",
+r"|  |   |  | ",
+r"|  ',_,'  | ",
+r" '.     ,' ",
+r" ''''' "
+]
+gentoo_logo = [
+r"  _-----_ ",
+r" (       \ ",
+r" \    0   \ ",
+r"  \        )",
+r" /      _/ ",
+r" (     _- ",
+r" \____- ",
+]
 
 
 default_logo = [
@@ -81,7 +93,8 @@ def get_logo(distro_id):
     logos = {
     "cachyos": cachy_logo,
     "arch": arch_logo,
-    "fedora": fedora_logo
+    "fedora": fedora_logo,
+    "gentoo": gentoo_logo
             }
     return logos.get(distro_id, default_logo)
 
